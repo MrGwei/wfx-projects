@@ -17,6 +17,7 @@
     <modules>
         <module>springboot_security_jwt</module>
 
+        <module>web_https</module>
         <module>web_tomcat</module>
         <module>web_undertow</module>
     </modules>
