@@ -1,10 +1,10 @@
-package com.wfx.projects.springbootssojwt;
+package com.wfx.projects.springcloud.eurekaserver;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class SpringbootSsoJwtApplicationTests {
+class EurekaServerApplicationTests {
 
     @Test
     void contextLoads() {
