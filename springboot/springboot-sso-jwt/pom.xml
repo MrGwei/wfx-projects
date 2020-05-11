@@ -4,34 +4,33 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.wfx.projects</groupId>
-        <artifactId>parents</artifactId>
+        <artifactId>springboot</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
     <groupId>com.wfx.projects</groupId>
-    <artifactId>springcloud</artifactId>
+    <artifactId>springboot-sso-jwt</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>springcloud</name>
-    <packaging>pom</packaging>
+    <name>springboot-sso-jwt</name>
     <description>Demo project for Spring Boot</description>
 
     <dependencies>
         <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter</artifactId>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-dependencies</artifactId>
+            <version>${spring-boot.version}</version>
+            <type>pom</type>
+            <scope>runtime</scope>
         </dependency>
-    </dependencies>
 
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>org.springframework.cloud</groupId>
-                <artifactId>spring-cloud-dependencies</artifactId>
-                <version>${spring-cloud.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-dependencies</artifactId>
+            <version>${spring-cloud.version}</version>
+            <type>pom</type>
+            <scope>runtime</scope>
+        </dependency>
+
+    </dependencies>
 
     <build>
         <plugins>

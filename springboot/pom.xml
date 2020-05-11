@@ -16,6 +16,7 @@
 
     <modules>
         <module>springboot_security_jwt</module>
+        <module>springboot-sso-jwt</module>
 
         <module>web_https</module>
         <module>web_tomcat</module>

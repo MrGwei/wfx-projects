@@ -17,12 +17,13 @@
 
     <properties>
         <java.version>1.8</java.version>
+        <spring-boot.version>2.2.7.RELEASE</spring-boot.version>
+        <spring-cloud.version>Greenwich.SR5</spring-cloud.version>
     </properties>
 
     <modules>
         <module>springboot</module>
         <module>springcloud</module>
-
     </modules>
 
     <dependencies>
