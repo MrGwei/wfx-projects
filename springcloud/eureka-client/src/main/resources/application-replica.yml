@@ -1,6 +1,6 @@
 # 指定运行端口
 server:
-  port: 8101
+  port: 8102
 
 # 指定服务名称
 spring:
@@ -14,5 +14,5 @@ eureka:
     # 获取注册实例列表
     fetch-registry: true
     service-url:
-      # 配置注册中心地址
-      defaultZone: http://localhost:8001/eureka
+      # 同时注册到两个注册中心
+      defaultZone: http://localhost:8002/eureka/, http://localhost:8003/eureka/

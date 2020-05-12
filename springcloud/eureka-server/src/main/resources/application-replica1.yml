@@ -1,6 +1,6 @@
 # 指定运行端口
 server:
-  port: 8001
+  port: 8002
 
 # 指定服务名称
 spring:
@@ -10,9 +10,12 @@ spring:
 # 指定主机地址
 eureka:
   instance:
-    hostname: localhost
+    hostname: replica1
   client:
     # 指定是否从注册中心获取服务(注册中心不需要开启)
-    fetch-registry: false
+    fetch-registry: true
     # 指定是否将服务注册到注册中心(注册中心不需要开启)
-    register-with-eureka: false
+    register-with-eureka: true
+    service-url:
+      # 注册到另一个Eureka注册中心
+      defaultZone: http://localhost:8003/eureka/

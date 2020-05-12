@@ -3,5 +3,6 @@
 参考：https://blog.csdn.net/ThinkWon/article/details/103715146
 
 01.
-- eureka-server 服务注册中心
-- eureka-client eureka客户端
+- eureka-server 服务注册中心，以及注册中心集群
+- eureka-security-server 安全注册服务中心
+- eureka-client eureka客户端，注册到注册中心\注册中心集群\注册到安全注册中心
