@@ -10,3 +10,6 @@
 02.Ribbon服务消费者
 - user-service 用于给Ribbon提供服务调用。
 - ribbon-service 来调用user-service模块演示负载均衡的服务调用
+
+03.Hystrix断路器
+- hystrix-service
