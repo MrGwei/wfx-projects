@@ -8,6 +8,8 @@ import javax.servlet.annotation.WebFilter;
 import java.io.IOException;
 
 /**
+ * 使用过滤器，在每个请求前后初始化和关闭HystrixRequestContext来解决该问题:
+ * java.lang.IllegalStateException: Request caching is not available. Maybe you need to initialize the HystrixRequestContext?
  * @author Gwei
  */
 @Component

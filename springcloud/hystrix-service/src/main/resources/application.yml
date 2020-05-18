@@ -1,8 +1,10 @@
 server:
   port: 8401
+
 spring:
   application:
     name: hystrix-service
+
 eureka:
   client:
     register-with-eureka: true
@@ -12,3 +14,19 @@ eureka:
 
 service-url:
   user-service: http://user-service
+
+management:
+  endpoints:
+    web:
+      exposure:
+        # ±©Â¶hystrix¼à¿Ø¶Ëµã"hystrix.stream"
+        include: "hystrix.stream"
+#management:
+#  endpoints:
+#    web:
+#      exposure:
+#        # ±©Â¶hystrix¼à¿Ø¶Ëµã"hystrix.stream"
+#        include: "*"
+#      cors:
+#        allowed-origins: "*"
+#        allowed-methods: "*"

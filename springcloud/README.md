@@ -13,3 +13,6 @@
 
 03.Hystrix断路器
 - hystrix-service
+
+04. 用来监控hystrix实例的执行情况。
+- hystrix-dashboard

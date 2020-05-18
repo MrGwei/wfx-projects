@@ -9,6 +9,9 @@ spring:
 
 # 指定主机地址
 eureka:
+  # 驱逐下线的服务，间隔5秒，默认60秒
+#  server:
+#    eviction-interval-timer-in-ms: 5000
   instance:
     hostname: localhost
   client:
