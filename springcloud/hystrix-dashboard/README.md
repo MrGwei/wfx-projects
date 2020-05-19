@@ -16,7 +16,7 @@ Hystrix Dashboard可以有效地反映出每个Hystrix实例的运行情况，�
 用来聚合hystrix-service的监控信息。
 使用application-replica1.yml配置再启动一个hystrix-service服务，启动turbine-service服务，此时注册中心显示如下。
 
-Hystrix集群监控演示
+### Hystrix集群监控演示
 访问Hystrix Dashboard：http://localhost:8501/hystrix
 添加集群监控地址，需要注意的是我们需要添加的是turbine-service的监控端点地址：
 url:http://localhost:8601/turbine.stream

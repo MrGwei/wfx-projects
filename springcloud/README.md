@@ -12,7 +12,11 @@
 - ribbon-service 来调用user-service模块演示负载均衡的服务调用
 
 03.Hystrix断路器
-- hystrix-service
+- hystrix-service 
 
 04. 用来监控hystrix实例的执行情况。
-- hystrix-dashboard
+- hystrix-dashboard 用来监控hystrix实例的执行情况。
+- turbine-service 用来聚合hystrix-service的监控信息。
+
+05. OpenFeign 是声明式的服务调用工具，它整合了Ribbon和Hystrix，拥有负载均衡和服务容错功能
+- feign-service
