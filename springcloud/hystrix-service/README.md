@@ -32,6 +32,7 @@ timerDelayInMilliseconds：collapserProperties中的属性，用于控制每隔�
 
 ### Hystrix的常用配置
 #### 全局配置
+```
 hystrix:
   command: #用于控制HystrixCommand的行为
     default:
@@ -67,10 +68,10 @@ hystrix:
       maximumSize: 10 #线程池的最大线程数，超过该线程数的请求会被拒绝
       maxQueueSize: -1 #用于设置线程池的最大队列大小，-1采用SynchronousQueue，其他正数采用LinkedBlockingQueue
       queueSizeRejectionThreshold: 5 #用于设置线程池队列的拒绝阀值，由于LinkedBlockingQueue不能动态改版大小，使用时需要用该参数来控制线程数
-
+```
 ### 实例配置
 实例配置只需要将全局配置中的default换成与之对应的key即可。
-
+```
 hystrix:
   command:
     HystrixComandKey: #将default换成HystrixComrnandKey
@@ -83,8 +84,15 @@ hystrix:
   threadpool:
     HystrixThreadPoolKey: #将default换成HystrixThreadPoolKey
       coreSize: 10
+```
 
 #### 配置文件中相关key的说明
 HystrixComandKey对应@HystrixCommand中的commandKey属性；
 HystrixCollapserKey对应@HystrixCollapser注解中的collapserKey属性；
 HystrixThreadPoolKey对应@HystrixCommand中的threadPoolKey属性。
+
+使用到的模块
+springcloud
+├── eureka-server -- eureka注册中心
+├── user-service -- 提供User对象CRUD接口的服务
+└── hystrix-service -- hystrix服务调用测试服务

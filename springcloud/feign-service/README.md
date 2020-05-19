@@ -8,7 +8,8 @@ Feign具备可插拔的注解支持，同时支持Feign注解、JAX-RS注解及S
 ## 在启动类上添加@EnableFeignClients注解来启用Feign的客户端功能
 
 ## 添加UserService接口完成对user-service服务的接口绑定
-我们通过@FeignClient注解实现了一个Feign客户端，其中的value为user-service表示这是对user-service服务的接口调用客户端。我们可以回想下user-service中的UserController，只需将其改为接口，保留原来的SpringMvc注释即可。
+我们通过@FeignClient注解实现了一个Feign客户端，其中的value为user-service表示这是对user-service服务的接口调用客户端。
+我们可以回想下user-service中的UserController，只需将其改为接口，保留原来的SpringMvc注释即可。
 
 
 ## 负载均衡功能演示
@@ -22,9 +23,12 @@ Feign中的服务降级使用起来非常方便，只需要为Feign客户端定�
 
 ## 修改application.yml，开启Hystrix功能
 #在Feign中开启Hystrix
+```
 feign:
   hystrix:
     enabled: true
+```
+
 
 ### 服务降级功能演示
 关闭两个user-service服务，重新启动feign-service;
@@ -38,26 +42,29 @@ NONE：默认的，不显示任何日志；
 BASIC：仅记录请求方法、URL、响应状态码及执行时间；
 HEADERS：除了BASIC中定义的信息之外，还有请求和响应的头信息；
 FULL：除了HEADERS中定义的信息之外，还有请求和响应的正文及元数据。
+
 ## 通过配置开启更为详细的日志
 我们通过java配置来使Feign打印最详细的Http请求日志信息。
+```
 @Configuration
 public class FeignConfig {
-
     @Bean
     Logger.Level level() {
         return Logger.Level.FULL;
     }
-
 }
+```
 
 ## 在application.yml中配置需要开启日志的Feign客户端
 配置UserService的日志级别为debug。
+```
 logging:
   level:
     com.jourwon.springcloud.service: debug
-    
+``` 
 ## Feign的常用配置
 Feign自己的配置
+```
 feign:
   hystrix:
     enabled: true #在Feign中开启Hystrix
@@ -71,3 +78,10 @@ feign:
 logging:
   level: #修改日志级别
     com.jourwon.springcloud.service: debug
+```
+
+使用到的模块
+springcloud
+├── eureka-server -- eureka注册中心
+├── user-service -- 提供User对象CRUD接口的服务
+└── feign-service -- feign服务调用测试服务

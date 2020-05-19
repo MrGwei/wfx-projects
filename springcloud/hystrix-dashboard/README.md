@@ -23,3 +23,10 @@ url:http://localhost:8601/turbine.stream
 title:hystrix-service
 调用几次hystrix-service的接口：http://localhost:8401/user/testCommand/1以及http://localhost:8402/user/testCommand/1
 可以看到我们的Hystrix实例数量变成了两个。
+
+## 使用到的模块
+springcloud
+├── eureka-server -- eureka注册中心
+├── user-service -- 提供User对象CRUD接口的服务
+├── hystrix-service -- hystrix服务调用测试服务
+└── hystrix-dashboard -- 展示hystrix实例监控信息的仪表盘
