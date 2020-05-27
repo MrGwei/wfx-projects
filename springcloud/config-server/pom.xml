@@ -4,42 +4,40 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.wfx.projects</groupId>
-        <artifactId>parents</artifactId>
+        <artifactId>springcloud</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
-    <groupId>com.wfx.projects</groupId>
-    <artifactId>springcloud</artifactId>
+    <groupId>com.wfx.projects.springcloud</groupId>
+    <artifactId>config-server</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>springcloud</name>
-    <packaging>pom</packaging>
+    <name>config-server</name>
+    <packaging>jar</packaging>
     <description>Demo project for Spring Boot</description>
 
-    <modules>
-        <module>eureka-server</module>
-        <module>eureka-client</module>
-        <module>eureka-security-server</module>
-
-        <module>user-service</module>
-        <module>ribbon-service</module>
-
-        <module>hystrix-service</module>
-        <module>hystrix-dashboard</module>
-        <module>turbine-service</module>
-
-        <module>feign-service</module>
-
-        <module>zuul-proxy</module>
-
-        <module>config-server</module>
-        <module>config-client</module>
-        <module>config-security-server</module>
-    </modules>
-
     <dependencies>
+
         <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter</artifactId>
+            <artifactId>spring-cloud-config-server</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-starter-tomcat</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
+
+        <!-- undertow -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-undertow</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+        </dependency>
+
     </dependencies>
 
     <dependencyManagement>

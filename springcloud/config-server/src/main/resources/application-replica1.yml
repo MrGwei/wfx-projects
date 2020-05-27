@@ -1,0 +1,25 @@
+server:
+  port: 8902
+
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        git:
+          # 配置存储配置信息的Git仓库
+          clone-on-start: true
+          # 配置存储配置信息的Git仓库
+          uri: https://github.com/MrGwei/ConfigFile
+          search-paths: respo
+          #search-paths: '{application}'
+          username: MrGwei
+          password:
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8001/eureka/
