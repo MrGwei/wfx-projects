@@ -86,7 +86,7 @@ springcloud
 06. Zuul服务网关
 - zuul-proxy 提供了统一的访问入口
 
-07. 配置中心服务
+07. 配置中心服务+Bus消息总线（amqp） 
 - config-server 配置中心服务
 - config-client 获取配置的客户端服务
 - config-security-server 带安全认证的配置中心服务
