@@ -188,3 +188,14 @@ management:
       exposure:
         include: 'refresh'
 ```
+
+
+
+## 添加消息总线支持
+```
+<dependency>
+    <groupId>org.springframework.cloud</groupId>
+    <artifactId>spring-cloud-starter-bus-amqp</artifactId>
+</dependency>
+```
+添加配置文件bootstrap-amqp1.yml及bootstrap-amqp2.yml用于启动两个不同的config-client，两个配置文件只有端口号不同；

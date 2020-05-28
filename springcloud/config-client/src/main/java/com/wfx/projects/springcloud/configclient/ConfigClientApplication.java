@@ -18,6 +18,12 @@ public class ConfigClientApplication {
      *
      * security：
      * http://localhost:9001/configInfo
+     *
+     *
+     * amqp
+     * http://localhost:9004/configInfo
+     * http://localhost:8904/actuator/bus-refresh
+     *
      * @param args
      */
     public static void main(String[] args) {

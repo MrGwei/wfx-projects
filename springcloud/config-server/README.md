@@ -30,3 +30,31 @@ profile：代表环境名称，对应配置文件中的spring.cloud.config.profi
 
 ## config-sever集群搭建
 在微服务架构中，所有服务都从配置中心获取配置，配置中心一旦宕机，会发生很严重的问题，下面我们搭建一个双节点的配置中心集群来解决该问题。
+
+
+## 动态刷新配置
+使用 Spring Cloud Bus 动态刷新配置需要配合 Spring Cloud Config 一起使用，我们使用上一节中的config-server、config-client模块来演示下该功能。
+
+
+
+## 使用到的模块
+springcloud
+├── eureka-server -- eureka注册中心
+├── config-server -- 配置中心服务
+├── config-security-server -- 带安全认证的配置中心服务
+└── config-client -- 获取配置的客户端服务
+
+
+## 给config-server添加消息总线支持
+在pom.xml中添加相关依赖：
+```
+<dependency>
+    <groupId>org.springframework.cloud</groupId>
+    <artifactId>spring-cloud-starter-bus-amqp</artifactId>
+</dependency>
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-actuator</artifactId>
+</dependency>
+```
+配置文件application-amqp.yml
