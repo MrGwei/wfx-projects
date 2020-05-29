@@ -91,4 +91,7 @@ springcloud
 - config-client 获取配置的客户端服务
 - config-security-server 带安全认证的配置中心服务
 
-
+0.8 Spring Cloud Sleuth是分布式系统中跟踪服务间调用的工具
+- eureka-server -- eureka注册中心
+- user-service -- 提供User对象CRUD接口的服务
+- ribbon-service -- ribbon服务调用测试服务
