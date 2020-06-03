@@ -1,0 +1,21 @@
+server:
+  port: 8206
+
+spring:
+  application:
+    name: consul-user-service
+  cloud:
+    consul:
+      # 将服务注册到consul
+      host: 192.168.6.180
+      port: 8500
+      discovery:
+        hostname: 192.168.6.111
+        # 实例ID
+#        service-name: ${spring.application.name}:${spring.cloud.client.ip-address}:${server.port}
+        service-name: ${spring.application.name}
+        # 健康检查
+        health-check-path: /actuator/health
+        health-check-interval: 10s
+        heartbeat:
+          enabled: true

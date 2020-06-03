@@ -95,3 +95,8 @@ springcloud
 - eureka-server -- eureka注册中心
 - user-service -- 提供User对象CRUD接口的服务
 - ribbon-service -- ribbon服务调用测试服务
+
+0.9 Spring Cloud Consul 为 SpringBoot 应用提供了 Consul的支持
+- consul-ribbon-service
+- consul-user-service
+- consul-config-client

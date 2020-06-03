@@ -4,46 +4,50 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.wfx.projects</groupId>
-        <artifactId>parents</artifactId>
+        <artifactId>springcloud</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
-    <groupId>com.wfx.projects</groupId>
-    <artifactId>springcloud</artifactId>
+    <groupId>com.wfx.projects.springcloud</groupId>
+    <artifactId>consul-config-client</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>springcloud</name>
-    <packaging>pom</packaging>
+    <name>consul-config-client</name>
+    <packaging>jar</packaging>
     <description>Demo project for Spring Boot</description>
 
-    <modules>
-        <module>eureka-server</module>
-        <module>eureka-client</module>
-        <module>eureka-security-server</module>
-
-        <module>user-service</module>
-        <module>ribbon-service</module>
-
-        <module>hystrix-service</module>
-        <module>hystrix-dashboard</module>
-        <module>turbine-service</module>
-
-        <module>feign-service</module>
-
-        <module>zuul-proxy</module>
-
-        <module>config-server</module>
-        <module>config-client</module>
-        <module>config-security-server</module>
-
-        <module>consul-ribbon-service</module>
-        <module>consul-user-service</module>
-        <module>consul-config-client</module>
-    </modules>
-
     <dependencies>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-starter-tomcat</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <!-- undertow -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-undertow</artifactId>
+        </dependency>
+
         <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter</artifactId>
+            <artifactId>spring-cloud-starter-consul-config</artifactId>
         </dependency>
+
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-consul-discovery</artifactId>
+        </dependency>
+
     </dependencies>
 
     <dependencyManagement>
